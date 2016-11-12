@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaPruebas", "SistemaPruebas\SistemaPruebas.csproj", "{A1C00C4C-1707-4750-8FB7-3A24ADBC55C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasReq", "PruebasReq\PruebasReq.csproj", "{2ECA2CB3-B9E5-478C-B50C-B881E53F0152}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1C00C4C-1707-4750-8FB7-3A24ADBC55C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C00C4C-1707-4750-8FB7-3A24ADBC55C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C00C4C-1707-4750-8FB7-3A24ADBC55C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C00C4C-1707-4750-8FB7-3A24ADBC55C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECA2CB3-B9E5-478C-B50C-B881E53F0152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECA2CB3-B9E5-478C-B50C-B881E53F0152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECA2CB3-B9E5-478C-B50C-B881E53F0152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECA2CB3-B9E5-478C-B50C-B881E53F0152}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

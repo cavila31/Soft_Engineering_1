@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+    <div class="form-group">
+        <asp:label runat="server" cssclass="col-md-6 control-label">Fecha de Asignación</asp:label>
+        <div class="col-md-8">
+            <div id="datetimepicker" class="col-md-10">
+                <asp:TextBox runat="server" data-format="MM/dd/yyyy" id="datepickernm" name="datepickernm" />
+                <span class="add-on">
+                    <i data-time-icon="icon-time" id="icon_date" data-date-icon="icon-calendar"></i>
+                </span>
+                <script type="text/javascript"
+                        src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+                </script>
+                <script type="text/javascript"
+                        src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+                </script>
+                <script type="text/javascript"
+                        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+                </script>
+                <script type="text/javascript"
+                        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+                </script>
+                <script type="text/javascript">
+                    $('#datepickernm').datetimepicker({
+                        format: 'yyyy/MM/dd',
+                        language: "es",
+                        todayHighlight: true,
+                        pickTime: false
+                    });
+                    <%--   $('#datetimepicker').datetimepicker('disable'); --%>
+                </script>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

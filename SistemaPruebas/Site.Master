@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SistemaPruebas.SiteMaster"%>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Sistema de Pruebas</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type = "text/javascript"> src = "http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" </script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+        function CloseWindow() {
+            alert('closing');
+            window.close();
+        }
+      
+        function HideLabel() {
+            $('#MsgGen').fadeIn();
+            $('#MsgGen').fadeOut(5000);
+        };
+            
+    </script>
+
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+
+});
+</script>
+
+
+
+
+</head>
+<body>
+    <form runat="server">
+
+        
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+               
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Inicio</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="selectable"
+>
+                        <li id ="A2" runat="server"><a runat="server" href="~/Intefaces/InterfazRecursoHumano" >Recursos Humanos</a></li>       
+                        <li id ="A1" runat="server"><a  runat="server" href="~/Intefaces/InterfazProyecto">Proyecto</a></li>   
+                        <li id ="Li1" runat="server"><a  runat="server" href="~/Intefaces/InterfazRequerimiento">Requerimiento</a></li>                                              
+                        <li id ="A3" runat="server"><a  runat="server" href="~/Intefaces/InterfazDiseno">Diseño</a></li> 
+                        <li id="A5" runat="server"><a runat="server" href="~/Intefaces/InterfazEjecucion">Ejecución</a></li> 
+                        <li id="A4" runat="server"><a runat="server" href="~/Intefaces/InterfazReporte">Reportes</a></li>  
+                                             
+                    </ul>                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                        <li id="nombre" runat="server"><a id="Nombres" name="pop" runat="server"  href="#0" data-trigger="focus" data-toggle="popover" data-placement="bottom" title="Información" data-content="" onclick="yourControlToBeClicked_Click"></a></li>  
+
+                        
+                                                   
+                        <li>
+
+                            <button id="LOGOUT" runat="server" class="btn btn-default"
+                                onserverclick="LogOut" causesvalidation="false" style="font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;">Salir</button>
+                        </li>
+                        <li id ="LOGIN" runat="server"><a runat="server" href="~/Account/Login">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+       
+        <div class="container body-content">
+            <div id="MsgGen" style="display:none; margin-top:40px; text-align:center">
+                <p>
+                    <asp:label runat="server" ID="MensajesGenerales" Font-Bold="False" Font-Size="Large"></asp:label>                    
+               </p>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                 
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p style="text-align:center"><a href="Creditos.aspx">Equipo desarrollador</a> </p>
+                
+            </footer>
+        </div>
+    </form> 
+</body>
+</html>
